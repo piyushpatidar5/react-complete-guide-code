@@ -2369,6 +2369,11 @@
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz#8013f2af54a2b7d735f71560ff360d3a8176a87b"
   integrity sha512-vTCdPp/T/Q3oSqwHmZ5Kpa9oI7iLtGl3RQaA/NyLHikvcrPxACkkKVr/XzkSPJWXHRhKGzVvb0urJsbMlRxi1Q==
 
+"@snyk/protect@^1.826.0":
+  version "1.826.0"
+  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.826.0.tgz#3eb3766aaea63700d2e34c31f5fb8a72b3e80613"
+  integrity sha512-xEV+nQ5O3RuJj9ACz+OYKVFwtrkyKTaM3cCvmde4ebqBnwMB+d7R1sWjFnEtDs3hnYlaSLjqOSapj8hUzPeokg==
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
