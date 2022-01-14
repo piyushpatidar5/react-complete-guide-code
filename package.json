@@ -42,7 +42,7 @@
         "typesafe-actions": "^5.1.0",
         "typescript": "^3.9.7",
         "uuid": "^3.3.3",
-        "yup": "^0.28.0"
+        "yup": "^0.32.11"
     },
     "scripts": {
         "start": "react-scripts start",
