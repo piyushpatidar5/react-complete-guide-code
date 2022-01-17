@@ -1194,6 +1194,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@snyk/protect@^1.829.0":
+  version "1.829.0"
+  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.829.0.tgz#22c034fa6dd489113569e4d567e04c5df8ed81d3"
+  integrity sha512-8rU5RkBf/7ta4Lja/xRjtFmPUjoicXqvFCJfNIxHufuEOHNrdiiOpTpxA/wRsRHme+M7cAxLlGqRM8TUJs3/jA==
+
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
