@@ -39,7 +39,6 @@
     "decimal.js": "^10.2.0",
     "eslint": "^8.7.0",
     "lodash": "^4.17.21",
-    "nodemon": "^2.0.1",
-    "serverless": "^2.72.0"
+    "nodemon": "^2.0.1"
   }
 }
