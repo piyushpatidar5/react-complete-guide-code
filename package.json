@@ -8,7 +8,7 @@
         "@material/drawer": "^4.0.0",
         "@react-pdf/renderer": "^1.6.8",
         "@react-pdf/styled-components": "^1.4.0",
-        "@testing-library/jest-dom": "^5.16.1",
+        "@testing-library/jest-dom": "5.16.1",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
         "@types/jest": "^24.0.0",
@@ -26,8 +26,8 @@
         "clsx": "^1.0.4",
         "csstype": "^2.6.8",
         "dom-to-image": "^2.6.0",
-        "formik": "^2.2.9",
-        "lodash": "^4.17.21",
+        "formik": "2.2.9",
+        "lodash": "4.17.21",
         "moment-timezone": "^0.5.27",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
@@ -38,11 +38,11 @@
         "react-tabs": "^3.1.0",
         "react-toastify": "^6.1.0",
         "recharts": "^2.1.8",
-        "sass": "^1.48.0",
+        "sass": "1.48.0",
         "typesafe-actions": "^5.1.0",
         "typescript": "^3.9.7",
         "uuid": "^3.3.3",
-        "yup": "^0.32.11"
+        "yup": "0.32.11"
     },
     "scripts": {
         "start": "react-scripts start",
