@@ -1,106 +1,145 @@
 {
-  "name": "druva-phoenix-agent-app",
-  "version": "1.0.0",
-  "description": "Common UI app to activate and check backup readiness checks for multiple workloads",
-  "config": {
-    "uidevport": 3001
-  },
-  "main": "./src/main/start.js",
+  "name": "phoenix",
+  "sideEffects": false,
+  "private": true,
+  "version": "0.0.1",
+  "description": "Phoenix(Hybrid Workloads) project for backup/restore of servers, vms, ec2, and many more.",
+  "main": " ",
   "scripts": {
-    "dev": "concurrently -k \"npm run startui\" \"npm run electron\"",
-    "startui": "webpack-dev-server --config ./src/renderer/webpack.dev.js",
-    "electron": "wait-on tcp:3001 && electron .",
-    "serve-win": "npm run buildui && npm run package-win",
-    "buildui": "webpack --config ./src/renderer/webpack.prod.js",
-    "package-win": "electron-builder build --win -c.extraMetadata.main=src/main/start.js --publish never",
     "test": "jest --verbose",
     "jslint": "eslint",
-    "__comment_for_produi": "To use below `npm run produi` command, first set IS_PROD_UI_MODE const to true",
-    "produi": "npm run buildui && electron ."
+    "csslint": "stylelint",
+    "build": "gulp build & webpack --config ./webpack.prod.js",
+    "devserver": "gulp dev & webpack-dev-server --config ./webpack.dev.server.js --host 0.0.0.0 --hot",
+    "vmdevserver": "sh ./webpack-cert.sh && npm run devserver -- --env vm",
+    "dev": "gulp dev & webpack --config ./webpack.dev.js",
+    "devwatch": "gulp dev & webpack --config ./webpack.dev.js --mode development --watch --progress",
+    "csswatch": "gulp sass-watch",
+    "pyut": "python src/roboqa/testcase/qa/UITest/ui_test*.py -f",
+    "font-generate": "node ./generateFont.js",
+    "generate": "plop --plopfile src/cportal/cportalserver/rjs/codeGenerator/plopfile.js"
   },
-  "author": "Druva",
+  "repository": {
+    "type": "git",
+    "url": "https://git.druva.org/phoenixdev/phoenix.git"
+  },
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "7.15.8",
-    "@babel/plugin-transform-runtime": "7.15.8",
-    "@babel/preset-env": "7.15.8",
-    "@babel/preset-react": "7.14.5",
-    "@wojtekmaj/enzyme-adapter-react-17": "0.6.5",
-    "babel-eslint": "10.1.0",
-    "babel-jest": "27.3.1",
-    "babel-loader": "8.2.3",
-    "concurrently": "6.3.0",
-    "css-loader": "6.4.0",
-    "electron": "16.0.5",
-    "electron-builder": "22.13.1",
-    "electron-reload": "2.0.0-alpha.1",
-    "enzyme": "3.11.0",
-    "eslint": "7.32.0",
-    "eslint-plugin-jest": "25.3.0",
-    "eslint-plugin-react": "7.27.1",
-    "eslint-plugin-react-hooks": "4.3.0",
-    "html-webpack-plugin": "5.4.0",
-    "jest": "27.3.1",
-    "mini-css-extract-plugin": "2.4.3",
-    "redux-mock-store": "1.5.4",
-    "sass-loader": "12.2.0",
-    "svg-url-loader": "7.1.1",
-    "wait-on": "6.0.0",
-    "webpack": "5.59.1",
-    "webpack-cli": "4.9.1",
-    "webpack-dev-server": "4.3.1",
-    "webpack-merge": "5.8.0",
-    "webpack-subresource-integrity": "5.0.0"
+  "engines": {
+    "node": ">=6.10.0"
   },
   "dependencies": {
-    "@druva-apps/orion-icons": "1.0.12",
-    "@vvo/tzdb": "6.47.0",
+    "@amcharts/amcharts4": "4.10.23",
+    "@amcharts/amcharts4-geodata": "4.1.17",
+    "@babel/runtime": "7.8.4",
+    "@druva-apps/orion-icons": "1.0.22",
+    "abortcontroller-polyfill": "1.4.0",
     "bootstrap": "4.4.1",
-    "downloads-folder": "1.0.3",
-    "electron-is-dev": "2.0.0",
-    "formik": "2.2.9",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-redux": "7.2.5",
-    "react-router-dom": "5.3.0",
-    "react-select": "5.2.1",
-    "reactstrap": "8.10.0",
-    "redux": "4.1.1",
-    "redux-thunk": "2.3.0",
-    "yup": "0.32.11"
+    "cronstrue": "1.68.0",
+    "intersection-observer": "0.10.0",
+    "lodash": "4.17.21",
+    "moment-timezone": "0.5.25",
+    "orion": "3.0.6",
+    "prop-types": "15.6.2",
+    "react": "16.13.1",
+    "react-beautiful-dnd": "10.0.4",
+    "react-copy-to-clipboard": "5.0.1",
+    "react-csv": "2.0.3",
+    "react-dom": "16.13.1",
+    "react-hashchange": "0.1.0",
+    "react-hot-loader": "4.12.19",
+    "react-intersection-observer": "8.26.2",
+    "react-loading-skeleton": "2.2.0",
+    "react-perfect-scrollbar": "1.1.1",
+    "react-redux": "7.2.4",
+    "react-virtualized": "9.20.1",
+    "redux": "4.0.0",
+    "redux-thunk": "2.2.0",
+    "stacktrace-js": "2.0.0",
+    "svg-url-loader": "7.1.1",
+    "use-deep-compare-effect": "1.6.1",
+    "whatwg-fetch": "3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.8.4",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-proposal-export-namespace-from": "7.8.3",
+    "@babel/plugin-proposal-function-sent": "7.8.3",
+    "@babel/plugin-proposal-numeric-separator": "7.8.3",
+    "@babel/plugin-proposal-throw-expressions": "7.8.3",
+    "@babel/plugin-syntax-import-meta": "7.8.3",
+    "@babel/plugin-transform-runtime": "7.8.3",
+    "@babel/preset-env": "7.8.4",
+    "@babel/preset-react": "7.8.3",
+    "@hot-loader/react-dom": "16.13.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "25.5.1",
+    "babel-loader": "8.0.6",
+    "clean-webpack-plugin": "4.0.0",
+    "css-loader": "3.4.2",
+    "css-minimizer-webpack-plugin": "3.4.1",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
+    "eslint": "5.16.0",
+    "eslint-plugin-jest": "21.17.0",
+    "eslint-plugin-react": "7.12.4",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "fetch-mock": "6.5.0",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "6.0.0",
+    "gulp-clean-css": "4.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-html-replace": "1.6.2",
+    "gulp-sass": "5.0.0",
+    "gulp-sri": "0.3.1",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "5.5.0",
+    "identity-obj-proxy": "3.0.0",
+    "isomorphic-fetch": "2.2.1",
+    "jest": "25.5.2",
+    "jest-fetch-mock": "1.5.0",
+    "mini-css-extract-plugin": "2.5.3",
+    "node-sass": "6.0.1",
+    "plop": "^2.7.4",
+    "react-test-renderer": "16.13.1",
+    "redux-mock-store": "1.5.3",
+    "style-loader": "3.3.1",
+    "stylelint": "12.0.1",
+    "svg-url-loader": "7.1.1",
+    "webfonts-generator": "0.4.0",
+    "webpack": "5.67.0",
+    "webpack-chunk-hash": "0.6.0",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "4.7.3",
+    "webpack-merge": "4.1.2",
+    "webpack-subresource-integrity": "5.1.0"
   },
   "jest": {
     "setupFilesAfterEnv": [
-      "./src/renderer/setupTests.js"
+      "./src/cportal/cportalserver/rjs/setupTests.js"
     ],
-    "testEnvironment": "jsdom",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.jsx?$",
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy",
+      "\\.(png|svg|jpg|gif|pdf|jpeg)$": "<rootDir>/src/cportal/cportalserver/rjs/__mocks__/fileMock.js"
+    },
+    "testPathIgnorePatterns": [
+      "./vmware/client/proxydeployment/ui/phoenixproxyclient/",
+      "./commonclients/phoenixapp/gui/",
+      "./src/cportal/cportalserver/rjs/awsResources/",
+      "./src/cportal/cportalserver/rjs/codeGenerator"
+    ],
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/renderer/**/*.js",
-      "!**/dist/**",
-      "!**/node_modules/**"
+      "src/cportal/cportalserver/rjs/**/*.js",
+      "!**/__test__/**",
+      "!**/awsResources/**",
+      "!**/codeGenerator/**"
     ],
-    "moduleNameMapper": {
-      "\\.(css|scss)$": "<rootDir>/src/renderer/setupTests.js",
-      "\\.(png|svg|jpg|gif|pdf|jpeg)$": "<rootDir>/src/renderer/setupTests.js"
-    },
-    "globals": {
-      "window": {}
-    }
-  },
-  "build": {
-    "productName": "HybridWorkloadsAgentApp",
-    "files": [
-      "src/**/*"
-    ],
-    "win": {
-      "target": "portable",
-      "icon": "src/main/icons/logo_icon.icns",
-      "publisherName": "Druva Technologies Pte. Ltd."
-    },
-    "portable": {
-      "artifactName": "${productName}.exe",
-      "splashImage": "src/renderer/assets/img/splash.bmp"
-    }
+    "transformIgnorePatterns": [
+      "node_modules/(?!(orion|lodash-es))/",
+      "node_modules/yup"
+    ]
   }
 }
