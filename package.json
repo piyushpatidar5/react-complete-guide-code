@@ -39,7 +39,7 @@
     "intersection-observer": "0.10.0",
     "lodash": "4.17.21",
     "moment-timezone": "0.5.25",
-    "orion": "3.0.6",
+    "orion": "14.3.0",
     "prop-types": "15.6.2",
     "react": "16.13.1",
     "react-beautiful-dnd": "10.0.4",
