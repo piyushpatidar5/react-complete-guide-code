@@ -31,7 +31,7 @@
   "dependencies": {
     "@amcharts/amcharts4": "4.10.23",
     "@amcharts/amcharts4-geodata": "4.1.17",
-    "@babel/runtime": "7.8.4",
+    "@babel/runtime": "7.26.10",
     "@druva-apps/orion-icons": "1.0.22",
     "abortcontroller-polyfill": "1.4.0",
     "bootstrap": "4.4.1",
