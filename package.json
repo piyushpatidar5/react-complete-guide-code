@@ -37,7 +37,7 @@
     "bootstrap": "4.4.1",
     "cronstrue": "1.68.0",
     "intersection-observer": "0.10.0",
-    "lodash": "4.17.21",
+    "lodash": "4.17.23",
     "moment-timezone": "0.5.25",
     "orion": "3.0.6",
     "prop-types": "15.6.2",
